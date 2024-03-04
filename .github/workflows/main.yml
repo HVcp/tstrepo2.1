@@ -1,3 +1,72 @@
+# name: Using custom action
+# on:
+#   push:
+#     branches:
+#       - main
+ 
+# jobs:
+#   setup:
+#     runs-on: ubuntu-latest
+ 
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
+ 
+#       #Use the custom setup action
+#     - name: Setup .NET 7
+#       uses: HVcp/tstrepo/.github/workflows/actions@main
+ 
+#   build:
+#     runs-on: ubuntu-latest
+ 
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
+ 
+#     - name: Build
+#       run: echo "Building..."
+ 
+#   test:
+#     runs-on: ubuntu-latest
+ 
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
+ 
+#     - name: Run Tests
+#       run: echo "Running tests..."
+ 
+#   deploy:
+#     runs-on: ubuntu-latest
+ 
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
+ 
+#     - name: Deploy
+#       run: echo "Deploying..."
+ 
+#   cleanup:
+#     runs-on: ubuntu-latest
+ 
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
+ 
+#     - name: Clean Up
+#       run: echo "Cleaning up..."
+ 
+#   final:
+#     needs: [setup, build, test, deploy, cleanup]
+#     runs-on: ubuntu-latest
+ 
+#     steps:
+#     - name: Final Step
+#       run: echo "All jobs completed!"
+
+
+
+
 name: Using custom action
 on:
   push:
@@ -7,18 +76,15 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
- 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
- 
-      #Use the custom setup action
+
     - name: Setup .NET 7
       uses: HVcp/tstrepo/.github/workflows/actions@main
  
   build:
     runs-on: ubuntu-latest
- 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -28,7 +94,6 @@ jobs:
  
   test:
     runs-on: ubuntu-latest
- 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -38,7 +103,6 @@ jobs:
  
   deploy:
     runs-on: ubuntu-latest
- 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -48,7 +112,6 @@ jobs:
  
   cleanup:
     runs-on: ubuntu-latest
- 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -59,8 +122,8 @@ jobs:
   final:
     needs: [setup, build, test, deploy, cleanup]
     runs-on: ubuntu-latest
- 
     steps:
     - name: Final Step
       run: echo "All jobs completed!"
+
  
